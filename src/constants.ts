@@ -8,7 +8,7 @@ export const PROFILE_IMAGE_URL = "https://lh3.googleusercontent.com/d/1sEaz0CRdS
 export const SOCIAL_LINKS = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/yuvrajgupta0221/' },
   { label: 'Upwork', href: 'https://www.upwork.com/freelancers/~01f2a01dd44b738e84?mp_source=share' },
-  { label: 'Instagram', href: 'https://www.instagram.com/yu_veeee/' },
+  { label: 'Instagram', href: 'https://www.instagram.com/yuvi.freelancer/' },
 ];
 
 export const NAV_LINKS = [
