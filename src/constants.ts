@@ -42,7 +42,7 @@ export const SIDE_PROJECTS = [
   },
   {
     id: 'google-attendance',
-    title: 'Google Attendance',
+    title: 'Attendance Tracker (M3 Design System)',
     role: 'UX/UI Designer',
     date: 'May 2025 - June 2025',
     description: 'A stress relief app for student in college attandance panic.',
@@ -63,8 +63,8 @@ export const SIDE_PROJECTS = [
     mobileImage: '/images/workflow-mobile.png'
   },
   {
-    id: 'food-delivery-revamp',
-    title: 'Food and courier delivery Revamp app',
+    id: 'food-delivery & Courier',
+    title: 'Food and courier delivery app',
     role: 'Product Designer',
     date: 'Jan 2026 - Present',
     description: 'Ongoing project',
