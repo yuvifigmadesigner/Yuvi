@@ -41,7 +41,7 @@ export const SIDE_PROJECTS = [
   },
   {
     id: 'google-attendance',
-    title: 'Google Attendance',
+    title: 'Attendance Tracker',
     role: 'UX/UI Designer',
     date: 'May 2025 - June 2025',
     description: 'A stress relief app for student in college attandance panic.',
@@ -51,10 +51,10 @@ export const SIDE_PROJECTS = [
   },
   {
     id: 'user-management-workflow',
-    title: 'User Management & Workflow System',
+    title: 'B2B Warranty Management & Workflow System',
     role: 'Product designer',
     date: 'Jan 2026',
-    description: 'A modern B2B SaaS solution designed to streamline Warranty Claim operations, empowering Admin users to manage teams and define workflows with ease.',
+    description: 'A modern SaaS solution designed to streamline Warranty Claim operations, empowering Admin users to manage teams and define workflows with ease.',
     image: 'https://s0.wp.com/mshots/v1/https%3A%2F%2Fsssignmentsolyticsyuvraj.vercel.app%2F?w=1200&h=630', // Fallback
     link: 'https://sssignmentsolyticsyuvraj.vercel.app/',
     theme: 'purple',
