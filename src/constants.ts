@@ -30,6 +30,18 @@ export const SIDE_PROJECTS = [
     isIframe: true
   },
   {
+    id: 'food-delivery-revamp',
+    title: 'Food and courier delivery Revamp app',
+    role: 'Product Designer',
+    date: 'Jan 2026 - Present',
+    description: 'Ongoing project',
+    image: '/showcase%20food.png',
+    link: 'https://food-and-courier.vercel.app/',
+    theme: 'teal',
+    isIframe: true,
+    comingSoon: false
+  },
+  {
     id: 'b2b-fleet-management',
     title: 'B2B Fleet Management',
     role: 'Product Designer',
@@ -41,37 +53,38 @@ export const SIDE_PROJECTS = [
     isIframe: true
   },
   {
-    id: 'google-attendance',
-    title: 'Google Attendance',
-    role: 'UX/UI Designer',
-    date: 'May 2025 - June 2025',
-    description: 'A stress relief app for student in college attandance panic.',
-    image: 'https://previews.jumpshare.com/thumb/815bc01b796dd6f1733c957c5af19493fad58248bc71f8bc3ad68c09301761bcdac47bd7e539e3ba8a5cd9f89701e4eaefe32cfadce8a5327b0fbc1446a89e33d8c23f1f6732d0e69b7ef20dbd492539',
-    link: 'https://project-eta-lake-19.vercel.app/',
-    theme: 'lime'
-  },
-  {
-    id: 'user-management-workflow',
-    title: 'B2B Warranty Management & Workflow System',
-    role: 'Product designer',
-    date: 'Jan 2026',
-    description: 'A modern SaaS solution designed to streamline Warranty Claim operations, empowering Admin users to manage teams and define workflows with ease.',
-    image: 'https://s0.wp.com/mshots/v1/https%3A%2F%2Fsssignmentsolyticsyuvraj.vercel.app%2F?w=1200&h=630', // Fallback
-    link: 'https://sssignmentsolyticsyuvraj.vercel.app/',
-    theme: 'purple',
-    isIframe: true,
-    mobileImage: '/images/workflow-mobile.png'
-  },
-  {
-    id: 'food-delivery-revamp',
-    title: 'Food and courier delivery Revamp app',
-    role: 'Product Designer',
-    date: 'Jan 2026 - Present',
-    description: 'Ongoing project',
-    image: '/showcase%20food.png',
-    link: 'https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/design/ygheuJ0lHkNacD6KFKru2o/Food---Delivery?node-id=0-1&t=puTzPrhMvzcu9pxh-1',
-    theme: 'teal',
-    isIframe: false,
-    comingSoon: true
+    id: 'others-popup',
+    title: 'Other Projects',
+    role: 'Various Roles',
+    date: '2025 - 2026',
+    description: 'Explore more of my work including Attendance and Workflow systems.',
+    image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=2555&auto=format&fit=crop', // Placeholder or use one of the inner images
+    link: '#',
+    theme: 'gray',
+    isPopup: true,
+    subProjects: [
+      {
+        id: 'google-attendance',
+        title: 'Google Attendance',
+        role: 'UX/UI Designer',
+        date: 'May 2025 - June 2025',
+        description: 'A stress relief app for student in college attandance panic.',
+        image: 'https://previews.jumpshare.com/thumb/815bc01b796dd6f1733c957c5af19493fad58248bc71f8bc3ad68c09301761bcdac47bd7e539e3ba8a5cd9f89701e4eaefe32cfadce8a5327b0fbc1446a89e33d8c23f1f6732d0e69b7ef20dbd492539',
+        link: 'https://project-eta-lake-19.vercel.app/',
+        theme: 'lime'
+      },
+      {
+        id: 'user-management-workflow',
+        title: 'B2B Warranty Management & Workflow System',
+        role: 'Product designer',
+        date: 'Jan 2026',
+        description: 'A modern SaaS solution designed to streamline Warranty Claim operations, empowering Admin users to manage teams and define workflows with ease.',
+        image: 'https://s0.wp.com/mshots/v1/https%3A%2F%2Fsssignmentsolyticsyuvraj.vercel.app%2F?w=1200&h=630',
+        link: 'https://sssignmentsolyticsyuvraj.vercel.app/',
+        theme: 'purple',
+        isIframe: true,
+        mobileImage: '/images/workflow-mobile.png'
+      }
+    ]
   }
 ];

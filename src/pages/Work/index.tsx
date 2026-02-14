@@ -5,10 +5,11 @@ import { ArrowUpRight, Quote, Calendar, User, Mail, Plus, Heart, Sparkles } from
 
 
 import StarBorder from '../../components/StarBorder';
+import ProjectModal from '../../components/ProjectModal';
 
 
 
-const ProjectCard: React.FC<{ project: typeof SIDE_PROJECTS[0], index: number }> = ({ project, index }) => {
+const ProjectCard: React.FC<{ project: any, index: number, onOpenPopup: (projects: any[]) => void }> = ({ project, index, onOpenPopup }) => {
   const isEven = index % 2 === 0;
 
 
@@ -25,6 +26,76 @@ const ProjectCard: React.FC<{ project: typeof SIDE_PROJECTS[0], index: number }>
   }, []);
 
   const showIframe = project.isIframe && !isMobile;
+
+  if (project.isPopup) {
+    return (
+      <div
+        className="group w-full mb-16 md:mb-24"
+        style={{
+          opacity: 0,
+          animation: `fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards ${index * 0.15 + 0.1}s`
+        }}
+      >
+        <div className="relative w-full rounded-[2rem] overflow-hidden border border-white/10 bg-[#1a1512] group-hover:border-white/20 transition-all duration-500">
+
+          {/* Background Gradient/Texture */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent opacity-50" />
+
+          <div className="relative p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16">
+
+            {/* Text Content */}
+            <div className="flex-1 flex flex-col items-start text-left z-10">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs md:text-sm font-mono uppercase tracking-widest text-white/50 mb-6">
+                <span className="w-2 h-2 rounded-full bg-[#D69452]" />
+                Archive
+              </div>
+
+              <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 group-hover:text-[#D69452] transition-colors">
+                {project.title}
+              </h3>
+
+              <p className="text-white/60 text-lg md:text-xl leading-relaxed max-w-xl mb-8">
+                {project.description}
+              </p>
+
+              <div className="flex flex-wrap gap-6 text-sm text-white/40 font-mono">
+                <div className="flex items-center gap-2">
+                  <User size={14} />
+                  <span>{project.role}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Calendar size={14} />
+                  <span>{project.date}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Action & Visuals */}
+            <div className="flex flex-col items-end gap-6 z-10 w-full md:w-auto">
+              {/* Button */}
+              <button
+                onClick={() => onOpenPopup && onOpenPopup(project.subProjects || [])}
+                className="w-full md:w-auto px-8 py-4 bg-white text-black hover:bg-[#D69452] hover:text-black rounded-xl font-bold text-base md:text-lg transition-all duration-300 flex items-center justify-center gap-3 transform group-hover:translate-x-2"
+              >
+                <span>View Collection</span>
+                <ArrowUpRight size={20} strokeWidth={2.5} />
+              </button>
+
+              {/* Hint */}
+              <div className="hidden md:flex items-center gap-2 text-white/30 text-xs font-mono uppercase tracking-widest">
+                <div className="w-8 h-px bg-white/20" />
+                Contains {project.subProjects?.length || 0} projects
+              </div>
+            </div>
+
+            {/* Decorative 'Stack' Visual behind (optional, CSS only) */}
+            <div className="absolute right-0 bottom-0 w-1/3 h-full bg-gradient-to-l from-[#D69452]/5 to-transparent pointer-events-none" />
+
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div
@@ -158,6 +229,14 @@ const TESTIMONIALS = [
 ];
 
 const Work: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [modalProjects, setModalProjects] = React.useState<any[]>([]);
+
+  const handleOpenPopup = (projects: any[]) => {
+    setModalProjects(projects);
+    setIsModalOpen(true);
+  };
+
   return (
     <>
       <main className="flex-1 flex flex-col justify-start px-6 md:px-12 relative z-10 text-white w-full max-w-screen-2xl 2xl:max-w-[1800px] mx-auto pt-12 md:pt-24 pb-20 2xl:pt-32">
@@ -170,7 +249,7 @@ const Work: React.FC = () => {
         {/* Cards Container - Vertical Stack for Bento Rows */}
         <div className="flex flex-col w-full mb-32">
           {SIDE_PROJECTS.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} />
+            <ProjectCard key={project.id} project={project} index={index} onOpenPopup={handleOpenPopup} />
           ))}
         </div>
 
@@ -247,6 +326,12 @@ const Work: React.FC = () => {
           </div>
         </div>
       </main>
+
+      <ProjectModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        projects={modalProjects}
+      />
     </>
   );
 };
