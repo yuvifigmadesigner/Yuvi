@@ -150,7 +150,7 @@ const ProjectCard: React.FC<{ project: any, index: number, onOpenPopup: (project
         {/* A. Title & Description Block */}
         <div className="relative flex-1 p-5 md:p-8 bg-white/5 border border-white/10 rounded-[1.5rem] md:rounded-[2rem] flex flex-col justify-center backdrop-blur-sm group-hover:bg-white/10 transition-colors duration-300">
 
-          <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 tracking-tight text-white group-hover:text-[#D69452] transition-colors">
+          <h3 className="text-xl md:text-3xl lg:text-4xl font-bold mb-3 tracking-tight text-white group-hover:text-[#D69452] transition-colors">
             {project.title}
           </h3>
           <p className="text-white/60 text-sm md:text-lg leading-relaxed line-clamp-4">

@@ -31,7 +31,7 @@ const MainContent: React.FC = () => {
           <div className="w-full h-px bg-gradient-to-r from-white/40 to-transparent mb-8 md:mb-12"></div>
 
           {/* Hero Headline */}
-          <h1 className="text-6xl md:text-8xl lg:text-[7rem] 2xl:text-[10rem] font-medium tracking-tighter leading-none mb-2 drop-shadow-lg">
+          <h1 className="text-5xl md:text-8xl lg:text-[7rem] 2xl:text-[10rem] font-medium tracking-tighter leading-none mb-2 drop-shadow-lg">
             <ScrambledText
               radius={100}
               duration={0.6}
@@ -41,7 +41,7 @@ const MainContent: React.FC = () => {
             </ScrambledText>
           </h1>
 
-          <p className="text-lg md:text-2xl text-white/50 uppercase tracking-wide mb-24 md:mb-32 2xl:mb-40 pl-1">
+          <p className="text-base md:text-2xl text-white/50 uppercase tracking-wide mb-24 md:mb-32 2xl:mb-40 pl-1">
             <ScrambledText
               radius={100}
               duration={0.6}
@@ -52,7 +52,7 @@ const MainContent: React.FC = () => {
           </p>
 
           {/* Footer Info */}
-          <div className="flex flex-col space-y-3 w-full text-lg md:text-xl 2xl:text-2xl tracking-wide">
+          <div className="flex flex-col space-y-3 w-full text-base md:text-xl 2xl:text-2xl tracking-wide">
 
             {/* Row 1 */}
             <div className="flex items-center">
